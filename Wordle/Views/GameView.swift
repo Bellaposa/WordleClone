@@ -8,18 +8,25 @@
 import SwiftUI
 
 struct GameView: View {
-	@EnvironmentObject var vm: WordleViewModel
+	@EnvironmentObject var viewModel: WordleViewModel
 	var body: some View {
 		NavigationView {
-			VStack(spacing: 3) {
-				GuessView(guess: $vm.guesses[0])
-				GuessView(guess: $vm.guesses[1])
-				GuessView(guess: $vm.guesses[2])
-				GuessView(guess: $vm.guesses[3])
-				GuessView(guess: $vm.guesses[4])
-				GuessView(guess: $vm.guesses[5])
+			VStack {
+				Spacer()
+				VStack(spacing: 3) {
+					GuessView(guess: $viewModel.guesses[0])
+					GuessView(guess: $viewModel.guesses[1])
+					GuessView(guess: $viewModel.guesses[2])
+					GuessView(guess: $viewModel.guesses[3])
+					GuessView(guess: $viewModel.guesses[4])
+				}
+				.frame(width: Global.boardWidth, height: 5 * Global.boardWidth / 5)
+				Spacer()
+				Keyboard()
+					.scaleEffect(Global.keyboardScale)
+					.padding(.top)
+				Spacer()
 			}
-			.frame(width: Global.boardWidth, height: 6 * Global.boardWidth / 5)
 			.navigationBarTitleDisplayMode(.inline)
 			.toolbar {
 				ToolbarItem(placement: .navigationBarLeading) {

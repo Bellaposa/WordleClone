@@ -17,6 +17,8 @@
 		892D70A027BBC8D700C89F13 /* Guess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D709F27BBC8D700C89F13 /* Guess.swift */; };
 		892D70A227BBC8E100C89F13 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D70A127BBC8E100C89F13 /* Global.swift */; };
 		892D70A427BBC98400C89F13 /* WordleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D70A327BBC98400C89F13 /* WordleViewModel.swift */; };
+		89B06B7F27BBFD3D00898C6F /* LetterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B06B7E27BBFD3D00898C6F /* LetterButtonView.swift */; };
+		89B06B8127BBFD4F00898C6F /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B06B8027BBFD4F00898C6F /* Keyboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		892D709F27BBC8D700C89F13 /* Guess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guess.swift; sourceTree = "<group>"; };
 		892D70A127BBC8E100C89F13 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		892D70A327BBC98400C89F13 /* WordleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleViewModel.swift; sourceTree = "<group>"; };
+		89B06B7E27BBFD3D00898C6F /* LetterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterButtonView.swift; sourceTree = "<group>"; };
+		89B06B8027BBFD4F00898C6F /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,8 @@
 			children = (
 				892D709627BBC75C00C89F13 /* GameView.swift */,
 				892D709927BBC77E00C89F13 /* GuessView.swift */,
+				89B06B7E27BBFD3D00898C6F /* LetterButtonView.swift */,
+				89B06B8027BBFD4F00898C6F /* Keyboard.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -189,11 +195,13 @@
 			files = (
 				892D709A27BBC77E00C89F13 /* GuessView.swift in Sources */,
 				892D70A427BBC98400C89F13 /* WordleViewModel.swift in Sources */,
+				89B06B8127BBFD4F00898C6F /* Keyboard.swift in Sources */,
 				892D709C27BBC79A00C89F13 /* Color+.swift in Sources */,
 				892D708B27BBC63300C89F13 /* ContentView.swift in Sources */,
 				892D709727BBC75C00C89F13 /* GameView.swift in Sources */,
 				892D708927BBC63300C89F13 /* WordleApp.swift in Sources */,
 				892D70A027BBC8D700C89F13 /* Guess.swift in Sources */,
+				89B06B7F27BBFD3D00898C6F /* LetterButtonView.swift in Sources */,
 				892D70A227BBC8E100C89F13 /* Global.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
