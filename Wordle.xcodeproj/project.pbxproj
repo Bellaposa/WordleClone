@@ -14,6 +14,9 @@
 		892D709727BBC75C00C89F13 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D709627BBC75C00C89F13 /* GameView.swift */; };
 		892D709A27BBC77E00C89F13 /* GuessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D709927BBC77E00C89F13 /* GuessView.swift */; };
 		892D709C27BBC79A00C89F13 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D709B27BBC79A00C89F13 /* Color+.swift */; };
+		892D70A027BBC8D700C89F13 /* Guess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D709F27BBC8D700C89F13 /* Guess.swift */; };
+		892D70A227BBC8E100C89F13 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D70A127BBC8E100C89F13 /* Global.swift */; };
+		892D70A427BBC98400C89F13 /* WordleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D70A327BBC98400C89F13 /* WordleViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,9 @@
 		892D709627BBC75C00C89F13 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		892D709927BBC77E00C89F13 /* GuessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessView.swift; sourceTree = "<group>"; };
 		892D709B27BBC79A00C89F13 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
+		892D709F27BBC8D700C89F13 /* Guess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guess.swift; sourceTree = "<group>"; };
+		892D70A127BBC8E100C89F13 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		892D70A327BBC98400C89F13 /* WordleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +63,8 @@
 		892D708727BBC63300C89F13 /* Wordle */ = {
 			isa = PBXGroup;
 			children = (
+				892D70A527BBC99300C89F13 /* ViewModel */,
+				892D709E27BBC8C200C89F13 /* Models */,
 				892D709D27BBC79F00C89F13 /* Extensions */,
 				892D709827BBC76200C89F13 /* Views */,
 				892D708827BBC63300C89F13 /* WordleApp.swift */,
@@ -90,6 +98,23 @@
 				892D709B27BBC79A00C89F13 /* Color+.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		892D709E27BBC8C200C89F13 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				892D709F27BBC8D700C89F13 /* Guess.swift */,
+				892D70A127BBC8E100C89F13 /* Global.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		892D70A527BBC99300C89F13 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				892D70A327BBC98400C89F13 /* WordleViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,10 +188,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				892D709A27BBC77E00C89F13 /* GuessView.swift in Sources */,
+				892D70A427BBC98400C89F13 /* WordleViewModel.swift in Sources */,
 				892D709C27BBC79A00C89F13 /* Color+.swift in Sources */,
 				892D708B27BBC63300C89F13 /* ContentView.swift in Sources */,
 				892D709727BBC75C00C89F13 /* GameView.swift in Sources */,
 				892D708927BBC63300C89F13 /* WordleApp.swift in Sources */,
+				892D70A027BBC8D700C89F13 /* Guess.swift in Sources */,
+				892D70A227BBC8E100C89F13 /* Global.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +325,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Wordle/Preview Content\"";
+				DEVELOPMENT_TEAM = JY334R344A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -325,6 +354,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Wordle/Preview Content\"";
+				DEVELOPMENT_TEAM = JY334R344A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
