@@ -14,13 +14,18 @@ struct GameView: View {
 			VStack {
 				Spacer()
 				VStack(spacing: 3) {
-					GuessView(guess: $viewModel.guesses[0])
-					GuessView(guess: $viewModel.guesses[1])
-					GuessView(guess: $viewModel.guesses[2])
-					GuessView(guess: $viewModel.guesses[3])
-					GuessView(guess: $viewModel.guesses[4])
+					ForEach(0...5, id: \.self) { index in
+						GuessView(
+							guess: $viewModel.guesses[index]
+						)
+							.modifier(
+								Shake(
+									animatableData: CGFloat(viewModel.incorrectAttempts[index])
+								)
+							)
+					}
 				}
-				.frame(width: Global.boardWidth, height: 5 * Global.boardWidth / 5)
+				.frame(width: Global.boardWidth, height: 6 * Global.boardWidth / 5)
 				Spacer()
 				Keyboard()
 					.scaleEffect(Global.keyboardScale)
@@ -66,6 +71,5 @@ struct GameView_Previews: PreviewProvider {
 	static var previews: some View {
 		GameView()
 			.environmentObject(WordleViewModel())
-			.previewInterfaceOrientation(.portraitUpsideDown)
 	}
 }

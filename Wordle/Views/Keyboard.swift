@@ -18,21 +18,30 @@ struct Keyboard: View {
 				ForEach(topRowArray, id: \.self) { letter in
 					LetterButtonView(letter: letter)
 				}
+				.disabled(viewModel.disabledKeys)
+				.opacity(viewModel.disabledKeys ? 0.6 : 1)
 			}
+			
 			HStack(spacing: 2) {
 				ForEach(secondRowArray, id: \.self) { letter in
 					LetterButtonView(letter: letter)
 				}
+				.disabled(viewModel.disabledKeys)
+				.opacity(viewModel.disabledKeys ? 0.6 : 1)
 			}
+			
 			HStack(spacing: 2) {
 			
-				deleteButton
+				enterButton
 				
 				ForEach(thirdRowArray, id: \.self) { letter in
 					LetterButtonView(letter: letter)
 				}
+				.disabled(viewModel.disabledKeys)
+				.opacity(viewModel.disabledKeys ? 0.6 : 1)
 				
-				enterButton
+				deleteButton
+				
 			}
 		}
 	}
@@ -40,20 +49,26 @@ struct Keyboard: View {
 	var enterButton: some View {
 		Button { viewModel.enterWord() }
 			label: { Text("Enter") }
-			.font(.system(size: 20))
-			.frame(width: 60, height: 50)
-			.foregroundColor(.primary)
-			.background(Color.unused)
+				.font(.system(size: 20))
+				.frame(width: 60, height: 50)
+				.foregroundColor(.primary)
+				.background(Color.unused)
+				.disabled(viewModel.currentWord.count < 5 || !viewModel.inPlay)
+				.opacity((viewModel.currentWord.count < 5 || !viewModel.inPlay) ? 0.6 : 1)
 	}
 	
 	var deleteButton: some View {
-		Button { viewModel.removeLetterFromCurrentWord() } label: {
-			Image(systemName: "delete.backward.fill")
-				.font(.system(size: 20, weight: .heavy))
-				.frame(width: 40, height: 50)
-				.foregroundColor(.primary)
-				.background(Color.unused)
-		}
+		
+		Button { viewModel.removeLetterFromCurrentWord() }
+			label: {
+				Image(systemName: "delete.backward.fill")
+					.font(.system(size: 20, weight: .heavy))
+					.frame(width: 40, height: 50)
+					.foregroundColor(.primary)
+					.background(Color.unused)
+			}
+			.disabled(!viewModel.inPlay || viewModel.currentWord.count == 0)
+			.opacity((!viewModel.inPlay || viewModel.currentWord.count == 0) ? 0.6 : 1)
 	}
 }
 
