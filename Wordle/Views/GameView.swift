@@ -10,58 +10,77 @@ import SwiftUI
 struct GameView: View {
 	@EnvironmentObject var viewModel: WordleViewModel
 	var body: some View {
-		NavigationView {
-			VStack {
-				Spacer()
-				VStack(spacing: 3) {
-					ForEach(0...5, id: \.self) { index in
-						GuessView(
-							guess: $viewModel.guesses[index]
-						)
-							.modifier(
-								Shake(
-									animatableData: CGFloat(viewModel.incorrectAttempts[index])
-								)
+		ZStack {
+			NavigationView {
+				VStack {
+					Spacer()
+					VStack(spacing: 3) {
+						ForEach(0...5, id: \.self) { index in
+							GuessView(
+								guess: $viewModel.guesses[index]
 							)
-					}
-				}
-				.frame(width: Global.boardWidth, height: 6 * Global.boardWidth / 5)
-				Spacer()
-				Keyboard()
-					.scaleEffect(Global.keyboardScale)
-					.padding(.top)
-				Spacer()
-			}
-			.navigationBarTitleDisplayMode(.inline)
-			.toolbar {
-				ToolbarItem(placement: .navigationBarLeading) {
-					Button {
-						
-					} label: {
-						Image(systemName: "questionmark.circle")
-					}
-				}
-				ToolbarItem(placement: .principal) {
-					Text("WORDLE")
-						.font(.largeTitle)
-						.fontWeight(.heavy)
-						.foregroundColor(.primary)
-				}
-				ToolbarItem(placement: .navigationBarTrailing) {
-					HStack {
-						Button {
-							
-						} label: {
-							Image(systemName: "chart.bar")
-						}
-						Button {
-							
-						} label: {
-							Image(systemName: "gearshape.fill")
+								.modifier(
+									Shake(
+										animatableData: CGFloat(viewModel.incorrectAttempts[index]))
+								)
 						}
 					}
+					.frame(width: Global.boardWidth, height: 6 * Global.boardWidth / 5)
+					
+					Spacer()
+					
+					Keyboard()
+						.scaleEffect(Global.keyboardScale)
+						.padding(.top)
+					
+					Spacer()
+				}
+				.disabled(viewModel.showStats)
+				.navigationBarTitleDisplayMode(.inline)
+				.overlay(alignment: .top) {
+					if let toastText = viewModel.toastText {
+						ToastView(toastText: toastText)
+							.offset(y: 20)
+					}
+				}
+				.toolbar {
+					ToolbarItem(placement: .navigationBarLeading) {
+						HStack {
+							if !viewModel.inPlay {
+								Button { viewModel.newGame() } label: {
+									Text("New")
+										.foregroundColor(.primary)
+								}
+							}
+							Button {
+								
+							} label: {
+								Image(systemName: "questionmark.circle")
+							}
+						}
+					}
+					
+					ToolbarItem(placement: .principal) {
+						Text("WORDLE")
+							.font(.largeTitle)
+							.fontWeight(.heavy)
+							.foregroundColor(.primary)
+					}
+					
+					ToolbarItem(placement: .navigationBarTrailing) {
+						HStack {
+							Button {
+								withAnimation { viewModel.showStats.toggle() }
+							} label: { Image(systemName: "chart.bar") }
+							Button {
+								
+							} label: { Image(systemName: "gearshape.fill") }
+						}
+					}
 				}
 			}
+			
+			if viewModel.showStats { StatsView() }
 		}
 		.navigationViewStyle(.stack)
 	}
