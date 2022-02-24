@@ -19,6 +19,9 @@
 		892D70A227BBC8E100C89F13 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D70A127BBC8E100C89F13 /* Global.swift */; };
 		892D70A427BBC98400C89F13 /* WordleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D70A327BBC98400C89F13 /* WordleViewModel.swift */; };
 		896537A327BF9A7F00CE8A26 /* big5.txt in Resources */ = {isa = PBXBuildFile; fileRef = 896537A227BF9A7F00CE8A26 /* big5.txt */; };
+		899D468F27C7FC880004DBD9 /* UIWindow+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899D468E27C7FC880004DBD9 /* UIWindow+.swift */; };
+		899D469127C7FE200004DBD9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899D469027C7FE1F0004DBD9 /* SettingsView.swift */; };
+		899D469327C7FE970004DBD9 /* ColorSchemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899D469227C7FE970004DBD9 /* ColorSchemeManager.swift */; };
 		899FDEFC27BF94430047D825 /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899FDEFB27BF94430047D825 /* Shake.swift */; };
 		89B06B7F27BBFD3D00898C6F /* LetterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B06B7E27BBFD3D00898C6F /* LetterButtonView.swift */; };
 		89B06B8127BBFD4F00898C6F /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B06B8027BBFD4F00898C6F /* Keyboard.swift */; };
@@ -41,6 +44,9 @@
 		892D70A127BBC8E100C89F13 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		892D70A327BBC98400C89F13 /* WordleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleViewModel.swift; sourceTree = "<group>"; };
 		896537A227BF9A7F00CE8A26 /* big5.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = big5.txt; sourceTree = "<group>"; };
+		899D468E27C7FC880004DBD9 /* UIWindow+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+.swift"; sourceTree = "<group>"; };
+		899D469027C7FE1F0004DBD9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		899D469227C7FE970004DBD9 /* ColorSchemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSchemeManager.swift; sourceTree = "<group>"; };
 		899FDEFB27BF94430047D825 /* Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
 		89B06B7E27BBFD3D00898C6F /* LetterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterButtonView.swift; sourceTree = "<group>"; };
 		89B06B8027BBFD4F00898C6F /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
@@ -119,6 +125,7 @@
 				89B06B8027BBFD4F00898C6F /* Keyboard.swift */,
 				89CEB09627C52F48006F0297 /* StatisticsView.swift */,
 				89CEB09A27C532B0006F0297 /* ToastView.swift */,
+				899D469027C7FE1F0004DBD9 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -127,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				892D709B27BBC79A00C89F13 /* Color+.swift */,
+				899D468E27C7FC880004DBD9 /* UIWindow+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -145,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				892D70A327BBC98400C89F13 /* WordleViewModel.swift */,
+				899D469227C7FE970004DBD9 /* ColorSchemeManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -234,11 +243,14 @@
 				89B06B8127BBFD4F00898C6F /* Keyboard.swift in Sources */,
 				89CEB09B27C532B0006F0297 /* ToastView.swift in Sources */,
 				899FDEFC27BF94430047D825 /* Shake.swift in Sources */,
+				899D469327C7FE970004DBD9 /* ColorSchemeManager.swift in Sources */,
 				892D709C27BBC79A00C89F13 /* Color+.swift in Sources */,
 				89CEB09727C52F48006F0297 /* StatisticsView.swift in Sources */,
 				892D708B27BBC63300C89F13 /* ContentView.swift in Sources */,
+				899D469127C7FE200004DBD9 /* SettingsView.swift in Sources */,
 				892D709727BBC75C00C89F13 /* GameView.swift in Sources */,
 				892AA68927C29DB50062BB9A /* FlipView.swift in Sources */,
+				899D468F27C7FC880004DBD9 /* UIWindow+.swift in Sources */,
 				892D708927BBC63300C89F13 /* WordleApp.swift in Sources */,
 				892D70A027BBC8D700C89F13 /* Guess.swift in Sources */,
 				89B06B7F27BBFD3D00898C6F /* LetterButtonView.swift in Sources */,
@@ -300,7 +312,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -355,7 +367,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -381,6 +393,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -410,6 +423,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

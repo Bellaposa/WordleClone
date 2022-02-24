@@ -9,6 +9,8 @@ import SwiftUI
 
 struct GameView: View {
 	@EnvironmentObject var viewModel: WordleViewModel
+	@State private var showSettings = false
+	
 	var body: some View {
 		ZStack {
 			NavigationView {
@@ -72,11 +74,12 @@ struct GameView: View {
 							Button {
 								withAnimation { viewModel.showStats.toggle() }
 							} label: { Image(systemName: "chart.bar") }
-							Button {
-								
-							} label: { Image(systemName: "gearshape.fill") }
+							Button { showSettings.toggle() }
+						label: { Image(systemName: "gearshape.fill") }
 						}
 					}
+				}.sheet(isPresented: $showSettings) {
+					SettingsView()
 				}
 			}
 			
