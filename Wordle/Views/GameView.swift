@@ -10,11 +10,18 @@ import SwiftUI
 struct GameView: View {
 	@EnvironmentObject var viewModel: WordleViewModel
 	@State private var showSettings = false
+	@State private var showSnackBar = false
+	@State private var showHelp = false
+
 	
 	var body: some View {
 		ZStack {
 			NavigationView {
 				VStack {
+					if Global.screenHeight < 600 {
+						Text("")
+					}
+					
 					Spacer()
 					VStack(spacing: 3) {
 						ForEach(0...5, id: \.self) { index in
@@ -39,6 +46,7 @@ struct GameView: View {
 				}
 				.disabled(viewModel.showStats)
 				.navigationBarTitleDisplayMode(.inline)
+				
 				.overlay(alignment: .top) {
 					if let toastText = viewModel.toastText {
 						ToastView(toastText: toastText)
@@ -54,10 +62,9 @@ struct GameView: View {
 										.foregroundColor(.primary)
 								}
 							}
-							Button {
-								
-							} label: {
-								Image(systemName: "questionmark.circle")
+							Button { showHelp.toggle() }
+								label: {
+									Image(systemName: "questionmark.circle")
 							}
 						}
 					}
@@ -79,13 +86,16 @@ struct GameView: View {
 						}
 					}
 				}.sheet(isPresented: $showSettings) {
-					SettingsView()
+					SettingsView(isShowing: $showSettings)
 				}
 			}
 			
 			if viewModel.showStats { StatsView() }
 		}
 		.navigationViewStyle(.stack)
+		.sheet(isPresented: $showHelp) {
+			HelpView()
+		}
 	}
 }
 

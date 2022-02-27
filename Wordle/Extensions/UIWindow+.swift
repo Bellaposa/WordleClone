@@ -17,3 +17,23 @@ extension UIWindow {
 		return window
 	}
 }
+
+extension View {
+	@ViewBuilder
+	func applyIf<M: View>(condition: Bool, transform: (Self) -> M) -> some View {
+		if condition {
+			transform(self)
+		} else {
+			self
+		}
+	}
+}
+
+extension Bool {
+	static var iOS15: Bool {
+		if #available(iOS 15, *) {
+			return true
+		}
+		return false
+	}
+}

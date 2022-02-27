@@ -18,21 +18,24 @@ struct Statistics: Codable {
 	}
 	
 	func saveStat() {
-		if let encoded = try? JSONEncoder().encode(self) {
-			UserDefaults.standard.set(encoded, forKey: "Stat")
-		}
+//		if let encoded = try? JSONEncoder().encode(self) {
+//			UserDefaults.standard.set(encoded, forKey: "Stat")
+//		}
+		
+		NSUbiquitousKeyValueStore.stat = self
 	}
 	
 	static func loadStat() -> Statistics {
-		if let savedStat = UserDefaults.standard.object(forKey: "Stat") as? Data {
-			if let currentStat = try? JSONDecoder().decode(Statistics.self, from: savedStat) {
-				return currentStat
-			} else {
-				return Statistics()
-			}
-		} else {
-			return Statistics()
-		}
+//		if let savedStat = UserDefaults.standard.object(forKey: "Stat") as? Data {
+//			if let currentStat = try? JSONDecoder().decode(Statistics.self, from: savedStat) {
+//				return currentStat
+//			} else {
+//				return Statistics()
+//			}
+//		} else {
+//			return Statistics()
+//		}
+		NSUbiquitousKeyValueStore.stat
 	}
 	
 	mutating func update(win: Bool, index: Int? = nil) {
