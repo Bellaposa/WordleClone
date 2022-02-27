@@ -42,7 +42,7 @@ class WordleViewModel: ObservableObject {
 	// MARK: - Setup
 	func newGame() {
 		populateDefaults()
-		selectedWord = Global.randomElement
+		selectedWord = Global.randomElement.uppercased()
 		correctlyPlacedLetters = [String](repeating: "-", count: 5)
 		currentWord = ""
 		inPlay = true
