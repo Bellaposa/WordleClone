@@ -13,28 +13,13 @@ struct Statistics: Codable {
 	var streak = 0
 	var maxStreak = 0
 	
-	var wins: Int {
-		frequencies.reduce(0, +)
-	}
+	var wins: Int { frequencies.reduce(0, +) }
 	
-	func saveStat() {
-//		if let encoded = try? JSONEncoder().encode(self) {
-//			UserDefaults.standard.set(encoded, forKey: "Stat")
-//		}
-		
+	func saveStatistics() {
 		NSUbiquitousKeyValueStore.stat = self
 	}
 	
-	static func loadStat() -> Statistics {
-//		if let savedStat = UserDefaults.standard.object(forKey: "Stat") as? Data {
-//			if let currentStat = try? JSONDecoder().decode(Statistics.self, from: savedStat) {
-//				return currentStat
-//			} else {
-//				return Statistics()
-//			}
-//		} else {
-//			return Statistics()
-//		}
+	static func loadStatistics() -> Statistics {
 		NSUbiquitousKeyValueStore.stat
 	}
 	
@@ -45,6 +30,6 @@ struct Statistics: Codable {
 			frequencies[index!] += 1
 			maxStreak = max(maxStreak, streak)
 		}
-		saveStat()
+		saveStatistics()
 	}
 }

@@ -35,7 +35,7 @@ class WordleViewModel: ObservableObject {
 	}
 	
 	init() {
-		currentStat = Statistics.loadStat()
+		currentStat = Statistics.loadStatistics()
 		newGame()
 	}
 	
@@ -220,7 +220,7 @@ class WordleViewModel: ObservableObject {
 	}
 	
 	func shareResult() {
-		let stat = Statistics.loadStat()
+		let stat = Statistics.loadStatistics()
 		let results = guesses.enumerated().compactMap { $0 }
 		var guessString = ""
 		
